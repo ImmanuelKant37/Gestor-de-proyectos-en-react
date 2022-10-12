@@ -11,7 +11,7 @@ const myStyle = {
   border: '5px solid black',
   gridTemplateColumns: '400fr 400fr 400fr 400fr 400fr 495fr',
   gridTemplateRows: '400fr 400fr',
-  columnGap: '5px',
+  columnGap: '10px',
   rowGap:'4em',
   position: 'fixed',
 };
@@ -21,7 +21,7 @@ function Items() {
   useEffect(() => {
     const url= 'https://serverbackendikant.herokuapp.com/api/get/buscarPorCategoria'
     const body = {
-      "Categoria":"Card",
+      "Categoria":"Desarrollo",
       "Limite":30
     } 
         fetch(url, {
@@ -43,18 +43,19 @@ function Items() {
       .catch(error => console.error('Error:', error))
   }, [])
   return (<><div className="list-group list-group-flush" style={myStyle}> 
-    <div >{() => {Forms.map(items => {<ul>{items.Titulo}</ul>}) }}
-    <Card 
-    CarrouselID = {"carouselExampleControlsNoTouching"+String("Codigo")}
-    Incidencia='Implentacion' /* CATEGORIA */
-    Descripcion='Por desarrollar' /* DESCRIPCION */
-    Detalle='27/08/2022' /* FECHA */
-    Titulo={String("Titulo")} /* TITULO */
-    Activo='Inactivo' /* ESTADO */
-    Porcentaje='0%'  /* ITEMS PORCENTAJE */
-    Costo='0$'      /* ITEMS PORCENTAJE */
-  ></Card>
-  </div>
+   
+  {Forms.map(item => 
+    {return(<Card
+      CarrouselID = {"carouselExampleControlsNoTouching"+String(item.Codigo)}
+      Incidencia={item.Categoria} /* CATEGORIA */
+      Descripcion={item.Descripcion} /* DESCRIPCION */
+      Detalle={item.createdAt} /* FECHA */
+      Titulo={item.Titulo} /* TITULO */
+      Activo={item.Activo} /* ESTADO */
+      Porcentaje={String(item.Porcentaje)}  /* ITEMS PORCENTAJE */
+      Costo={String(item.Costo)}      /* ITEMS PORCENTAJE */
+    
+    ></Card>)})}
   </div></>
   )
 }
