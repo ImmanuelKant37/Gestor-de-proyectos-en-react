@@ -1,6 +1,5 @@
-import logo from './logo.svg';
+import React, { Component }  from 'react';
 import Navbar from './components/Navbar';
-import Card from './components/Card';
 import Items from './components/fetch/getItems';
 
 function Animaciones (){
