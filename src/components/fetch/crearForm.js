@@ -16,10 +16,10 @@ const myStyle = {
   position: 'fixed',
 };
 function Items() {
-  const [Forms, setForms] = useState([])
+  const [Titulo, setTitulo] = useState('')
   const [Codigo, setCodigo] = useState('')
   useEffect(() => {
-    const url= 'https://serverbackendikant.herokuapp.com/api/get/buscarPorCategoria'
+    const url= 'https://serverbackendikant.herokuapp.com/api/get/crearForm'
     const body = {
       "Categoria":"Card",
       "Limite":30
@@ -36,14 +36,13 @@ function Items() {
        setTitulo( String(response.find.NombreForm))
        setCodigo( String(response.find.Codigo))
        */
-      setForms(response.form)
-      console.log(response.form)
+      console.log(response)
       }
       )
       .catch(error => console.error('Error:', error))
   }, [])
   return (<><div className="list-group list-group-flush" style={myStyle}> 
-    <div >{() => {Forms.map(items => {<ul>{items.Titulo}</ul>}) }}
+    <div >
     <Card 
     CarrouselID = {"carouselExampleControlsNoTouching"+String("Codigo")}
     Incidencia='Implentacion' /* CATEGORIA */
