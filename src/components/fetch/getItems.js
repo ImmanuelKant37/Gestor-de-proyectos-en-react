@@ -19,23 +19,24 @@ function Items() {
   const [Titulo, setTitulo] = useState('')
   const [Codigo, setCodigo] = useState('')
   useEffect(() => {
-    //const ur = 'https://serverbackendikant.herokuapp.com/api/login/'
-    const url= 'https://serverbackendikant.herokuapp.com/api/get/buscarForm'
+    const url= 'https://serverbackendikant.herokuapp.com/api/get/buscarPorCategoria'
     const body = {
-      "Codigo":-2
+      "Categoria":"Card",
+      "Limite":30
     } 
         fetch(url, {
         method: 'POST',
-        body: JSON.stringify(body ),
+        body: JSON.stringify(body),
       headers:{
         'Content-Type': 'application/json'
       }
       })
       .then(response =>  response.json())
-      .then( response => {
+      .then( response => {/*
        setTitulo( String(response.find.NombreForm))
        setCodigo( String(response.find.Codigo))
-       
+       */
+      console.log(response)
       }
       )
       .catch(error => console.error('Error:', error))
@@ -43,14 +44,14 @@ function Items() {
   return (<><div className="list-group list-group-flush" style={myStyle}> 
     <div >
     <Card 
-    CarrouselID = {"carouselExampleControlsNoTouching"+String(Codigo)}
-    Incidencia='Implentacion'
-    Descripcion='Por desarrollar'
-    Detalle='27/08/2022'
-    Titulo={String(Titulo)}
-    Activo='Inactivo'
-    Porcentaje='0%'
-    Costo='0$'
+    CarrouselID = {"carouselExampleControlsNoTouching"+String("Codigo")}
+    Incidencia='Implentacion' /* CATEGORIA */
+    Descripcion='Por desarrollar' /* DESCRIPCION */
+    Detalle='27/08/2022' /* FECHA */
+    Titulo={String("Titulo")} /* TITULO */
+    Activo='Inactivo' /* ESTADO */
+    Porcentaje='0%'  /* ITEMS PORCENTAJE */
+    Costo='0$'      /* ITEMS PORCENTAJE */
   ></Card>
   </div>
   </div></>
