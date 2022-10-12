@@ -17,7 +17,6 @@ const myStyle = {
 };
 function Items() {
   const [Forms, setForms] = useState([])
-  const [Codigo, setCodigo] = useState('')
   useEffect(() => {
     const url= 'https://serverbackendikant.herokuapp.com/api/get/buscarPorCategoria'
     const body = {
