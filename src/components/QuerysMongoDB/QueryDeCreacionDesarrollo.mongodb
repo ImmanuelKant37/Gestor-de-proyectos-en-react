@@ -1,3 +1,0 @@
-use('Registros')
-//db.createCollection('Desarrollos')
-db.Desarrollos.count()

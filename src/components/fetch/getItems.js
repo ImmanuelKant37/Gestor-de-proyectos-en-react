@@ -16,9 +16,9 @@ const myStyle = {
   position: 'fixed',
 };
 function Items() {
-  const [Forms, setForms] = useState([])
+  const [Documentos, setDocumentos] = useState([])
   useEffect(() => {
-    const url= 'https://serverbackendikant.herokuapp.com/api/get/buscarPorCategoria'
+    const url= 'https://serverbackendikant.herokuapp.com/api/post/getAllDocumentos'
     const body = {
       "Categoria":"Desarrollo",
       "Limite":30
@@ -35,15 +35,15 @@ function Items() {
        setTitulo( String(response.find.NombreForm))
        setCodigo( String(response.find.Codigo))
        */
-      setForms(response.form)
-      console.log(response.form)
+      setDocumentos(response.Documentos)
+      console.log(response)
       }
       )
       .catch(error => console.error('Error:', error))
   }, [])
   return (<><div className="list-group list-group-flush" style={myStyle}> 
    
-  {Forms.map(item => 
+  {Documentos.map(item => 
     {return(<Card
       CarrouselID = {"carouselExampleControlsNoTouching"+String(item.Codigo)}
       Incidencia={item.Categoria} /* CATEGORIA */
@@ -51,8 +51,8 @@ function Items() {
       Detalle={item.createdAt} /* FECHA */
       Titulo={item.Titulo} /* TITULO */
       Activo={item.Activo} /* ESTADO */
-      Porcentaje={String(item.Porcentaje)}  /* ITEMS PORCENTAJE */
-      Costo={String(item.Costo)}      /* ITEMS PORCENTAJE */
+     // Porcentaje={String(item.Porcentaje)}  /* ITEMS PORCENTAJE */
+     // Costo={String(item.Costo)}      /* ITEMS PORCENTAJE */
     
     ></Card>)})}
   </div></>

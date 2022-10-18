@@ -1,24 +1,11 @@
 import React from 'react'
 import Card from './Card'
 import { Component } from 'react'
-class newCard extends Component {
-  render(){return (
-    <>
-      <div>
-        <Card 
-        Incidencia='Implentacion'
-        Titulo='Gestor personal' 
-        Descripcion='Por desarrollar'
-        Detalle='27/08/2022'
-        Activo='Inactivo'
-        Porcentaje='0%'
-        Costo='0$'
-         /></div></>
-  )}
-}
+import { crearDocumento } from './functions/crearDocumento'
 function Header() {
+
   return (
-    <><div>
+    <><div id ='elements'>
         <div className="dropdown">
   <button className="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
     Menu <></> 
@@ -28,15 +15,9 @@ function Header() {
 </svg>
   </button>
   <ul className="dropdown-menu">
-    <li><a className="dropdown-item" 
-    onClick={
-      ()=>{{ 
-        document.body.inner(
-          <newCard/>
-
-
-        )}}}>
-        Nuevo documento</a></li>
+    <li><a className="dropdown-item"  data-bs-toggle="modal" href="#exampleModalToggle" role="button">
+        Nuevo documento</a>
+    </li>
     <li><a className="dropdown-item" href="#">Cargar documento</a></li>
     <li><a className="dropdown-item" href="#">Buscar documento</a></li>
   </ul>
