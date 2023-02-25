@@ -18,7 +18,7 @@ const myStyle = {
 function Items() {
   const [Documentos, setDocumentos] = useState([])
   useEffect(() => {
-    const url= 'plantilla-backend-mern.vercel.app/api/post/getAllDocumentos'
+    const url= 'http://plantilla-backend-mern.vercel.app//api/post/getAllDocumentos'
     const body = {
       "Categoria":"Desarrollo",
       "Limite":30
