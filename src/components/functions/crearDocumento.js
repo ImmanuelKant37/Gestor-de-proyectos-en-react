@@ -4,7 +4,7 @@ import App from '../../App';
 
   export function crearDocumento(bodyParam)
   {
-    const url= 'https://plantilla-backend-mern.vercel.app/api/post/crearDocumento'
+    const url= 'plantilla-backend-mern.vercel.app/api/post/crearDocumento'
     const body = bodyParam
     fetch(url, {
     method: 'POST',

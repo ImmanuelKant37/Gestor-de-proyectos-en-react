@@ -19,7 +19,7 @@ function Items() {
   const [Titulo, setTitulo] = useState('')
   const [Codigo, setCodigo] = useState('')
   useEffect(() => {
-    const url= 'https://plantilla-backend-mern.vercel.app/api/get/crearForm'
+    const url= 'plantilla-backend-mern.vercel.app/api/get/crearForm'
     const body = {
       "Categoria":"Card",
       "Limite":30
