@@ -18,7 +18,7 @@ const myStyle = {
 function Items() {
   const [Documentos, setDocumentos] = useState([])
   useEffect(() => {
-    const url= 'https://plantilla-backend-mern.vercel.app/api/post/getAllDocumentos'
+    const url= 'https://plantilla-backend-mern.vercel.app/api/post/getForms'
     const body = {
       "Categoria":"Desarrollo",
       "Limite":30
@@ -27,7 +27,9 @@ function Items() {
         method: 'POST',
         body: JSON.stringify(body),
       headers:{
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Origin': 'https://gestorproyectos.netlify.app',
+        'Access-Control-Request-Method': 'POST'
       }
       })
       .then(response =>  response.json())
