@@ -2,6 +2,8 @@
   "name": "main",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://plantilla-backend-mern.vercel.app",
+
   "dependencies": {
     "axios": "^0.27.2",
     "mongodb": "^4.9.0",
