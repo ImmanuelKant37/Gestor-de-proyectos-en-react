@@ -4,12 +4,12 @@ import App from '../../App';
 
   export function crearDocumento(bodyParam)
   {
-    const url= 'https://serverbackendikant.herokuapp.com/api/post/crearDocumento'
-const body = bodyParam
+    const url= 'https://plantilla-backend-mern.vercel.app/api/post/crearDocumento'
+    const body = bodyParam
     fetch(url, {
     method: 'POST',
     body: JSON.stringify(body),
-  headers:{
+    headers:{
     'Content-Type': 'application/json'
   }
   })

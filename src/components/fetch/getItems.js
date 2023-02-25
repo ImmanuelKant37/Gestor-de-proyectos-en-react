@@ -18,7 +18,7 @@ const myStyle = {
 function Items() {
   const [Documentos, setDocumentos] = useState([])
   useEffect(() => {
-    const url= 'https://serverbackendikant.herokuapp.com/api/post/getAllDocumentos'
+    const url= 'https://plantilla-backend-mern.vercel.app/api/post/getAllDocumentos'
     const body = {
       "Categoria":"Desarrollo",
       "Limite":30
