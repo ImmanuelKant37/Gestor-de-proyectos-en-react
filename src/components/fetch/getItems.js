@@ -37,7 +37,7 @@ function Items() {
        setTitulo( String(response.find.NombreForm))
        setCodigo( String(response.find.Codigo))
        */
-      setDocumentos(response.Documentos)
+      setDocumentos(response.findAll)
       console.log(response)
       }
       )
