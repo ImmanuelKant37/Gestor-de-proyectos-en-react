@@ -21,10 +21,6 @@ function Items() {
   useEffect(() => {
     const url= 'https://plantilla-backend-mern.vercel.app/api/get/crearForm'
     const body = {
-      'mode':'no-cors',
-      'headers' :{
-        'Access-Control-Allow-Origin': '*',
-    },
       "Categoria":"Card",
       "Limite":30
     } 

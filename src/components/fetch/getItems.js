@@ -24,10 +24,7 @@ function Items() {
       "Limite":30
     } 
         fetch(url, {
-          'mode':'no-cors',
-          'headers' :{
-            'Access-Control-Allow-Origin': '*',
-        },
+          mode: 'no-cors',
         method: 'POST',
         body: JSON.stringify(body),
       headers:{
